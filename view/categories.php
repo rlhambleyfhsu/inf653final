@@ -1,5 +1,5 @@
 <?php
-#require_once('util/valid_admin.php');
+require_once('util/valid_admin.php');
  ?>
 <main>
   <h2>Manage Categories</h2>
