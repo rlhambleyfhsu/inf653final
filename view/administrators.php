@@ -2,7 +2,7 @@
 //session_start();
 #require('../model/db.php');
 //require_once('../model/admin.php');
-//require_once('util/valid_admin.php');
+require_once('util/valid_admin.php');
 ?>
 <?php
 $username = '';

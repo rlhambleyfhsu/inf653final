@@ -11,13 +11,12 @@ require('./model/authors_db.php');
 require('./model/categories_db.php');
 require('./model/admin.php');
 
-//session_status() === PHP_SESSION_ACTIVE ? '' : session_start();
-//$loggedIn = isset($_SESSION['is_valid_admin']);
+session_status() === PHP_SESSION_ACTIVE ? '' : session_start();
+$loggedIn = isset($_SESSION['is_valid_admin']);
+//$loggedIn = true;
 
-$loggedIn = true;
-
-echo "LoggedIn = ";
-echo $loggedIn;
+//echo "LoggedIn = ";
+//echo $loggedIn;
 $display = '';
 $approval = false;
 $quotes = [];
@@ -29,8 +28,8 @@ if (!empty($_POST)) {
     $action = filter_input(INPUT_GET, 'action');
 }
 
-echo " Action = ";
-echo $action;
+//echo " Action = ";
+//echo $action;
 
 if (!$loggedIn) {
     $display = 'view/login.php';
@@ -130,8 +129,8 @@ if (!$loggedIn) {
 }
 $authors = getAuthors();
 $categories = getCategories();
-echo " display = ";
-echo $display;
+//echo " display = ";
+//echo $display;
 include('view/header.php');
 include('view/nav_admin.php');
 include($display);
