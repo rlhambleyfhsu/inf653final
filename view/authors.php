@@ -27,7 +27,7 @@ require_once('util/valid_admin.php');
     <h2>Add Author</h2>
     <form action="admin.php" method="post" id="addauthors">
       <input type="hidden" name="action" value="addauthors">
-    <label>Category:</label>
+    <label>Author Name:</label>
     <input type="text" name="authorName"><br>
     <label>&nbsp;</label>
     <input type="submit" value="Add Authors"><br>
