@@ -14,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $authorID = filter_input(INPUT_GET, 'authorId');
     $categoryID = filter_input(INPUT_GET, 'categoryId');
     $limit = filter_input(INPUT_GET, 'limit', FILTER_VALIDATE_INT);
-    //$random = htmlspecialchars(filter_input(INPUT_GET, 'random')) == 'true' ? true : false;
 
     //echo $authorID;
 
@@ -28,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
     else {
       $quotes = getQuotes($authorID, $categoryID, $limit);
-      //$quotes = $random ? ($quotes[mt_rand(0, count($quotes) - 1)]) : $quotes;
       echo json_encode($quotes, JSON_NUMERIC_CHECK);
     }
 } else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
