@@ -111,7 +111,8 @@ if (!$loggedIn) {
 }
 $authors = getAuthors();
 $categories = getCategories();
-
+echo " display = ";
+echo $display;
 include('view/header.php');
 include('view/nav_admin.php');
 include($display);
