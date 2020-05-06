@@ -20,7 +20,7 @@ if (!empty($_POST)) {
     $action = filter_input(INPUT_GET, 'action');
 }
 if (!$loggedIn) {
-    //$display = 'view/login.php';
+    $display = 'view/login.php';
     $display = 'view/quotes.php';
 } else if ($action == "approvals") {
     $quotes = getApprovals();
