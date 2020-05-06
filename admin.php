@@ -8,6 +8,8 @@ require('./model/admin.php');
 session_status() === PHP_SESSION_ACTIVE ? '' : session_start();
 $loggedIn = isset($_SESSION['is_valid_admin']);
 
+echo "LoggedIn = ";
+echo $loggedIn;
 //$loggedIn = true;
 $display = '';
 $approval = false;
@@ -19,6 +21,10 @@ if (!empty($_POST)) {
 } else {
     $action = filter_input(INPUT_GET, 'action');
 }
+
+echo " Action = ";
+echo $action;
+
 if (!$loggedIn) {
     $display = 'view/login.php';
     $display = 'view/quotes.php';
