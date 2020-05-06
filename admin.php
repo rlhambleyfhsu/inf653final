@@ -107,7 +107,7 @@ if (!$loggedIn) {
     $authorID = filter_input(INPUT_GET, 'authorID', FILTER_VALIDATE_INT);
     $categoryID = filter_input(INPUT_GET, 'categoryID', FILTER_VALIDATE_INT);
     $quotes = getQuotes($authorID, $categoryID, 0);
-    $display = 'view/quotes.php';
+    $display = 'view/login.php';
 }
 $authors = getAuthors();
 $categories = getCategories();
