@@ -72,12 +72,20 @@
                         <blockquote>
                             "<?php echo $quote['quotetext']; ?>"
                         </blockquote>
-                        <p><?php echo $quote['authorName']; ?> on <?php echo $quote['categoryName']; ?></p>
+                        <p><?php echo $quote['authorName']; ?>  --  <?php echo $quote['categoryName']; ?></p>
                         <div>
                             <?php if ($loggedIn && $approval) { ?>
                                 <div>
+                                  <table>
+                                    <tr>
+                                    <td>
                                     <div onclick="updateEntry(<?php echo $quote['id'] ?>, 'approve')"></i> Approve</div>
+                                  </td>
+                                  <td>
                                     <div onclick="updateEntry(<?php echo $quote['id'] ?>, 'delete')"></i> Delete</div>
+                                  </td>
+                                </tr>
+                              </table>
                                 </div>
                             <?php } else if ($loggedIn) { ?>
                                 <div  onclick="updateEntry(<?php echo $quote['quoteID'] ?>, 'delete')">Delete</div>
