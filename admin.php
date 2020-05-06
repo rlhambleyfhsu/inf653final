@@ -8,9 +8,10 @@ require('./model/admin.php');
 session_status() === PHP_SESSION_ACTIVE ? '' : session_start();
 $loggedIn = isset($_SESSION['is_valid_admin']);
 
+$loggedIn = true;
+
 echo "LoggedIn = ";
 echo $loggedIn;
-$loggedIn = true;
 $display = '';
 $approval = false;
 $quotes = [];
@@ -107,7 +108,7 @@ if (!$loggedIn) {
     $authorID = filter_input(INPUT_GET, 'authorID', FILTER_VALIDATE_INT);
     $categoryID = filter_input(INPUT_GET, 'categoryID', FILTER_VALIDATE_INT);
     $quotes = getQuotes($authorID, $categoryID, 0);
-    $display = 'view/login.php';
+    $display = 'view/quotes.php';
 }
 $authors = getAuthors();
 $categories = getCategories();
