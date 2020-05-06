@@ -1,8 +1,8 @@
 <?php
-#session_start();
+//session_start();
 #require('../model/db.php');
-#require_once('../model/admin.php');
-require_once('util/valid_admin.php');
+//require_once('../model/admin.php');
+//require_once('util/valid_admin.php');
 ?>
 <?php
 $username = '';
@@ -29,7 +29,7 @@ if ($action == 'register')
   }
 
   $error_username = (!empty($username) && (strlen($username)>4) && check_username($username))?true:false;
-  $error_password = (!empty($password) && (strlen($password)>4) && preg_match('@[A-Z]@',$password)&&preg_match('@[0-9]@',$password))?true:false;
+  $error_password = (!empty($password) && (strlen($password)>4))?true:false;
   $error_confirm = ($password == $confirm_password);
   if ($error_username && $error_password && $error_confirm)
   {
@@ -39,6 +39,7 @@ if ($action == 'register')
   }
   else {
     $action ='administrators';
+    include('admin.php');
   }
 }
 if ($action == 'administrators')

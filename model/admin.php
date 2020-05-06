@@ -28,6 +28,8 @@
      $query = 'SELECT * FROM administrators WHERE username = :username';
      $statement = $db->prepare($query);
      $statement->bindValue(':username', $username);
+     //echo "\n username = ";
+     //echo $username;
      $statement->execute();
      $test = $statement->fetch();
      $statement->closeCursor();

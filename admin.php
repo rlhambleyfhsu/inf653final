@@ -1,12 +1,18 @@
 <?php
+
+//$lifetime = 60 * 60 * 24;
+//session_set_cookie_params($lifetime, '/');
+//session_name('adminlogin');
+//session_start();
+
 require('./model/db.php');
 require('./model/quotes_db.php');
 require('./model/authors_db.php');
 require('./model/categories_db.php');
 require('./model/admin.php');
 
-session_status() === PHP_SESSION_ACTIVE ? '' : session_start();
-$loggedIn = isset($_SESSION['is_valid_admin']);
+//session_status() === PHP_SESSION_ACTIVE ? '' : session_start();
+//$loggedIn = isset($_SESSION['is_valid_admin']);
 
 $loggedIn = true;
 
@@ -91,9 +97,21 @@ if (!$loggedIn) {
     $pw = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
   }
-  $error_username = (!empty($un) && (strlen($un)>5) && check_username($un))?true:false;
-  $error_password = (!empty($pw) && (strlen($pw)>7) && preg_match('@[A-Z]@',$pw)&&preg_match('@[a-z]@',$pw)&&preg_match('@[0-9]@',$pw))?true:false;
+  //echo " un = ";
+  //echo $un;
+  //echo " pw = ";
+  //echo $pw;
+
+  //echo " cpw = ";
+  //echo $confirm_password;
+  $error_username = (!empty($un) && (strlen($un)>4) && check_username($un))?true:false;
+  $error_password = (!empty($pw) && (strlen($pw)>4))?true:false;
   $error_confirm = ($pw == $confirm_password);
+
+  //  echo " eun = ";
+  //  echo $error_username;
+  //  echo " epw = ";
+  //  echo $error_password;
   if ($error_username && $error_password && $error_confirm)
   {
     add_admin($un, $pw);
