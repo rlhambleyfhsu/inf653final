@@ -16,6 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $limit = filter_input(INPUT_GET, 'limit', FILTER_VALIDATE_INT);
     //$random = htmlspecialchars(filter_input(INPUT_GET, 'random')) == 'true' ? true : false;
 
+    echo $authorID;
+    
     if ($authorID == "all") {
       $authors = getAuthors();
       echo json_encode($authors, JSON_NUMERIC_CHECK);
