@@ -1,11 +1,10 @@
 <?php
-        // DB variables set to required settings
-        $dsn = 'mysql:host=localhost;dbname=quotes';
-        $username = 'mgs_user';
-        $password = 'pa55word';
-        //$dsn = 'mysql:host=bbj31ma8tye2kagi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=ns05o8od4aqphelr';
-        //$username = 'hzcr7bqchttlxf8b';
-        //$password = 'v7s4ss0bhn3rsxlc';
+        //$dsn = 'mysql:host=localhost;dbname=quotes';
+        //$username = 'mgs_user';
+        //$password = 'pa55word';
+        $dsn = 'mysql:host=ijj1btjwrd3b7932.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=pmuczthrt8xi6ki6';
+        $username = 'vsxsxfisei7nikok';
+        $password = 'zho0b8qr127n8xeg';
         try {
             $db = new PDO($dsn, $username, $password);
             } catch (PDOException $e) {
