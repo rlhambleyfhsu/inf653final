@@ -10,7 +10,7 @@ $loggedIn = isset($_SESSION['is_valid_admin']);
 
 echo "LoggedIn = ";
 echo $loggedIn;
-//$loggedIn = true;
+$loggedIn = true;
 $display = '';
 $approval = false;
 $quotes = [];
@@ -27,7 +27,7 @@ echo $action;
 
 if (!$loggedIn) {
     $display = 'view/login.php';
-    $display = 'view/quotes.php';
+    //$display = 'view/quotes.php';
 } else if ($action == "approvals") {
     $quotes = getApprovals();
     $approval = true;
